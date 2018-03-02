@@ -7,7 +7,7 @@ let &packpath = &runtimepath
 " then use :PlugInstall
 
 " Plugin_support:
-" pip install neovim flake8 mypy yapf
+" pip install neovim flake8 mypy yapf pylint
 " powerline fonts: https://github.com/powerline/fonts
 
 " Themes:
@@ -27,6 +27,10 @@ Plug 'w0rp/ale'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sbdchd/vim-run'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+" Plug 'vim-syntastic/syntastic'
 " Plug 'zchee/deoplete-jedi'
 call plug#end()
 
@@ -37,7 +41,8 @@ set shortmess+=Iw
 set number
 set list
 set showbreak=↳\ 
-set visualbell
+set listchars=tab:›\ ,trail:–,extends:»,precedes:«,eol:¬
+" set visualbell
 set cursorline
 set title
 
@@ -59,13 +64,15 @@ set splitright
 
 set background=dark
 colorscheme molokai "https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
-highlight cursorline ctermbg=236 ctermfg=none
+highlight cursorline ctermbg=234 ctermfg=none
 highlight colorcolumn ctermbg=darkred
 highlight! link TermCursor Cursor
 highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
+highlight nontext ctermfg=darkgrey ctermbg=none " guifg=4a4a59
 
 " FINDING AND AUTOCOMPLETE:------------------------------------------------{{{1
 
+set path+=**
 set wildmenu
 set ignorecase
 set smartcase
@@ -86,14 +93,20 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Ale:---------------------------------------------------------------------{{{1
 
-let g:ale_linters = {'python': ['flake8', 'mypy']}
+let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint']}
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
+let g:ale_sign_column_always = 1
 
 " AIRLINE:-----------------------------------------------------------------{{{1
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
 " CtrlP:-------------------------------------------------------------------{{{1
 let g:ctrlp_map = '<c-p>'
@@ -203,7 +216,7 @@ nnoremap <F3> :Autoformat<CR>
 " vim-run
 nnoremap <F5> :Run<CR>
 
-" Terminal:-----------------------------------------------------------------{{{1
+" Terminal:----------------------------------------------------------------{{{1
 tnoremap <C-v><Esc> <C-\><C-n>
 
 function! OpenTerm()
@@ -239,4 +252,5 @@ endfunction  "  2}}}
 
 set foldtext=MyFoldText()
 
-" end of vimrc
+" 1}}}
+" end of init.vim config file:
