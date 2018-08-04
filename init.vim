@@ -117,7 +117,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Ale:---------------------------------------------------------------------{{{1
 
-let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint']}
+let g:ale_linters = {'python': ['flake8']}
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_column_always = 1
