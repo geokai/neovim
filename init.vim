@@ -198,15 +198,15 @@ inoremap <c-k> <ESC>la
 "smash escape
 inoremap jk <ESC>
 
-" insert blank row
-nnoremap <leader>r o<ESC>
-nnoremap <leader>R O<ESC>
+" insert blank row - Use 'vim-unimpaired'
+" nnoremap <leader>r o<ESC>
+" nnoremap <leader>R O<ESC>
 
 " navigating between vim tabs
 nnoremap <leader>n <ESC>:tabn<CR>
 nnoremap <leader>p <ESC>:tabp<CR>
 
-" use relative numbering
+" use relative numbering - Use 'vim-unimpaired' [or & ]or, to toggle: =or
 " nnoremap <silent> <leader>u <ESC>:set relativenumber!<CR><ESC>
 " inoremap <silent> <leader>u <ESC>:set relativenumber!<CR><ESC>i
 
