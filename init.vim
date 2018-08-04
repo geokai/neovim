@@ -16,7 +16,7 @@ let &packpath = &runtimepath
 
 " Vimplug:-----------------------------------------------------------------{{{1
 
-call plug#begin(~/.vim/plugged/)
+call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'SirVer/ultisnips'
