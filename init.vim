@@ -40,12 +40,14 @@ call plug#end()
 syntax enable
 set shortmess+=Iw
 set number
+
 set list
 set showbreak=↳\ 
 set listchars=tab:›\ ,trail:–,extends:»,precedes:«,eol:¬
 " set visualbell
 set cursorline
 set title
+set scrolloff=5
 
 " Tabs, spaces and wrapping
 set tabstop=4
