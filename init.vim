@@ -124,6 +124,14 @@ let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_column_always = 1
 
+" VimRun:-----------------------------------------------------------------{{{1
+
+" Automatically close the terminal split on completion
+let g:run_auto_close = 1
+
+" Open terminal split below
+let g:run_split = 'down'
+
 " AIRLINE:-----------------------------------------------------------------{{{1
 
 let g:airline_powerline_fonts = 1
