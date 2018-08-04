@@ -30,6 +30,7 @@ Plug 'sbdchd/vim-run'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
 " Plug 'vim-syntastic/syntastic'
 " Plug 'zchee/deoplete-jedi'
 call plug#end()
@@ -81,6 +82,29 @@ set showmatch
 " SuperTab:----------------------------------------------------------------{{{1
 
 let g:SuperTabDefaultCompletionType = "<c-n>" "set order of options to down
+
+" Easy-Motion:-------------------------------------------------------------{{{1
+
+" Remap EasyMotion leader key:
+map <leader> <Plug>(easymotion-prefix)
+
+" min keystrokes, with just one key binding, `s{char}{label}:
+nmap s <Plug>(easymotion-overwin-f)
+
+" Disable default mappings:
+let g:EasyMotion_do_mapping = 0
+
+" line-wise motion:
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+
+" Turn on case insensitive feature:
+let g:EasyMotion_smartcase = 1
+
+" Mappings:
+
+map <leader>w <Plug>(easymotion-w)
+
 
 " Deoplete:----------------------------------------------------------------{{{1
 
