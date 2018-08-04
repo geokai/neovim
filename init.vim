@@ -181,14 +181,15 @@ inoremap <leader>[ []<ESC>i
 inoremap <leader>t[ [  ]<ESC>hi
 inoremap <leader>{ {}<ESC>i
 inoremap <leader>< <><ESC>i
-" surround a word with ... pairs
-nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-nnoremap <leader>( viw<esc>a)<esc>hbi(<esc>lel
-nnoremap <leader>{ viw<esc>a}<esc>hbi{<esc>lel
-nnoremap <leader>< viw<esc>a><esc>hbi<<esc>lel
-nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
-nnoremap <leader>__ viw<esc>a__<esc>hbi__<esc>lel
+" surround a word with ... pairs - Use 'vim-surround'
+" nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+" nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+" nnoremap <leader>( viw<esc>a)<esc>hbi(<esc>lel
+" nnoremap <leader>{ viw<esc>a}<esc>hbi{<esc>lel
+" nnoremap <leader>< viw<esc>a><esc>hbi<<esc>lel
+" nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
+" nnoremap <leader>__ viw<esc>a__<esc>hbi__<esc>lel
+
 " exit pair(s) to end of line:
 inoremap <c-l> <ESC>A
 " exit nested pair to within parent pair:
