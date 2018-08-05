@@ -90,23 +90,35 @@ let g:SuperTabDefaultCompletionType = "<c-n>" "set order of options to down
 " Remap EasyMotion leader key:
 map <leader> <Plug>(easymotion-prefix)
 
-" min keystrokes, with just one key binding, `s{char}{label}:
-nmap s <Plug>(easymotion-overwin-f)
+" Character-wise motion
+nmap <leader>s <Plug>(easymotion-overwin-f)
 
 " Disable default mappings:
 let g:EasyMotion_do_mapping = 0
 
 " line-wise motion:
+let g:EasyMotion_startofline = 0
+
 map <leader>j <Plug>(easymotion-j)
+map <leader>J <Plug>(easymotion-sol-j)
+" nmap <leader>j <Plug>(easymotion-overwin-line)
 map <leader>k <Plug>(easymotion-k)
+map <leader>K <Plug>(easymotion-sol-k)
+" nmap <leader>k <Plug>(easymotion-overwin-line)
 
 " Turn on case insensitive feature:
 let g:EasyMotion_smartcase = 1
 
 " Mappings:
 
-map <leader>w <Plug>(easymotion-w)
+" -bd- for bidirectional motion with word-wise
+map <leader>w <Plug>(easymotion-bd-w)
+nmap <leader>w <Plug>(easymotion-bd-w)
+map <leader>W <Plug>(easymotion-bd-W)
 
+" end-of-word motion
+map <leader>e <Plug>(easymotion-bd-e)
+map <leader>E <Plug>(easymotion-bd-E)
 
 " Deoplete:----------------------------------------------------------------{{{1
 
