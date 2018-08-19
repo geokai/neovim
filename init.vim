@@ -18,24 +18,29 @@ let &packpath = &runtimepath
 
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'  " multifunction status bar
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'tpope/vim-commentary'
 Plug 'ervandew/supertab'
 Plug 'w0rp/ale'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'sbdchd/vim-run'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
+Plug 'sbdchd/vim-run'  " Run current file in a terminal split
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'  " Pairs of handy bracket mappings
+Plug 'tpope/vim-fugitive'  " Git functionality from within vim/neovim
+Plug 'tpope/vim-surround'  " Plugin for using 'surroundings'
+Plug 'tpope/vim-repeat'  "  Provides repeat functionality to other plugins
+Plug 'easymotion/vim-easymotion'  " Easier/Powerful vim motions
+Plug 'scrooloose/nerdtree'  " Nerdtree file explorer
+Plug 'Xuyuanp/nerdtree-git-plugin'  " Adds git status flags to Nerdtree
+Plug 'jistr/vim-nerdtree-tabs'  " Nerdtree independent of tabs
+Plug 'christoomey/vim-sort-motion'  " Sorting: linewise, character, block etc
 " Plug 'vim-syntastic/syntastic'
 " Plug 'zchee/deoplete-jedi'
 call plug#end()
 
-" BASIC SETTNGS:-----------------------------------------------------------{{{1
+" Basic Settngs:-----------------------------------------------------------{{{1
 
 syntax enable
 set shortmess+=Iw
@@ -73,7 +78,7 @@ highlight! link TermCursor Cursor
 highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
 highlight nontext ctermfg=darkgrey ctermbg=none " guifg=4a4a59
 
-" FINDING AND AUTOCOMPLETE:------------------------------------------------{{{1
+" Finding And Autocomplete:------------------------------------------------{{{1
 
 set path+=**
 set wildmenu
@@ -85,7 +90,7 @@ set showmatch
 
 let g:SuperTabDefaultCompletionType = "<c-n>" "set order of options to down
 
-" Easy-Motion:-------------------------------------------------------------{{{1
+" EasyMotion:--------------------------------------------------------------{{{1
 
 " Remap EasyMotion leader key:
 map <leader> <Plug>(easymotion-prefix)
@@ -136,7 +141,7 @@ let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_column_always = 1
 
-" VimRun:-----------------------------------------------------------------{{{1
+" VimRun:------------------------------------------------------------------{{{1
 
 " Automatically close the terminal split on completion
 let g:run_auto_close = 1
@@ -153,6 +158,10 @@ let g:airline#extensions#tabline#enabled = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+" NERDTree-----------------------------------------------------------------{{{1
+
+nnoremap <leader>ed <ESC>:NERDTreeTabsToggle<CR>
 
 " CtrlP:-------------------------------------------------------------------{{{1
 let g:ctrlp_map = '<c-p>'
@@ -216,9 +225,6 @@ inoremap <leader>< <><ESC>i
 inoremap <c-l> <ESC>A
 " exit nested pair to within parent pair:
 inoremap <c-k> <ESC>la
-
-"smash escape
-inoremap jk <ESC>
 
 " insert blank row - Use 'vim-unimpaired'
 " nnoremap <leader>r o<ESC>
