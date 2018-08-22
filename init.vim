@@ -53,6 +53,7 @@ set listchars=tab:›\ ,trail:–,extends:»,precedes:«,eol:¬
 set cursorline
 set title
 set scrolloff=5
+set noshowmode
 
 " Tabs, spaces and wrapping
 set tabstop=4
@@ -127,7 +128,7 @@ map <leader>E <Plug>(easymotion-bd-E)
 
 " Deoplete:----------------------------------------------------------------{{{1
 
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " UltiSnips:---------------------------------------------------------------{{{1
 
